@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class InfoMenu : MonoBehaviour
 {
-    public void Quit ()
+    public void BackToMenu ()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(1);
     }
 }
