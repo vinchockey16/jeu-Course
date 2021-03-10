@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground Tiles
+    uniqueID: 1269562587
+    locked: 0
+  - name: Piste
+    uniqueID: 1272751041
+    locked: 0
