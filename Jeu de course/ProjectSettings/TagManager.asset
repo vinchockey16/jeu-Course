@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - voitures
+  - obstacles
   - 
   - 
   - 
@@ -46,4 +46,7 @@ TagManager:
     locked: 0
   - name: Piste
     uniqueID: 1272751041
+    locked: 0
+  - name: voiture
+    uniqueID: 4237476689
     locked: 0
