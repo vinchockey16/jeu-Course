@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - voitures
+  - obstacles
   - 
   - 
   - 
@@ -40,4 +40,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground Tiles
+    uniqueID: 1269562587
+    locked: 0
+  - name: Piste
+    uniqueID: 1272751041
+    locked: 0
+  - name: voiture
+    uniqueID: 4237476689
     locked: 0
