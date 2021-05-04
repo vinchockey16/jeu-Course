@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 
-public class testing : MonoBehaviour
+public class AEtoile : MonoBehaviour
 {
     // [SerializeField] private CharacterPathfindingMovementHandler characterPathfinding;
 
