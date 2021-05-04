@@ -20,7 +20,7 @@ public class TopDownCarController : MonoBehaviour
 
     // Components
     Rigidbody2D carRigidbody2D;
-
+    
     // Awake is called when the script instance is being loaded.
     void Awake(){
         carRigidbody2D = GetComponent<Rigidbody2D>();

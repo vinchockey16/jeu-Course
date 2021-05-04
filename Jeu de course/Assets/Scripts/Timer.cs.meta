@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Jeu de course/Assets/Scripts/PathNodes.cs.meta
-guid: b76d1927b84e7404db91a426cea14eab
-=======
-guid: 3b7b9d8581219d9478dc3170973bde2d
->>>>>>> Vincent:Jeu de course/Assets/GameManager.cs.meta
+guid: 53eac6d971351404499ce1a1245919a6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

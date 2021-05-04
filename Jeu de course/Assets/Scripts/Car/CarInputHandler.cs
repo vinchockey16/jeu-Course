@@ -6,7 +6,7 @@ public class CarInputHandler : MonoBehaviour
 {
     // Components
     TopDownCarController topDownCarController;
-    
+
     void Awake()
     {
         topDownCarController = GetComponent<TopDownCarController>();

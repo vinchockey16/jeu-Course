@@ -9,4 +9,19 @@ public class OpenMaps : MonoBehaviour
 	{
 		SceneManager.LoadScene(3);
 	}
+
+	public void OpenMap2()
+	{
+		SceneManager.LoadScene(4);
+	}
+
+	public void OpenMap3()
+	{
+		SceneManager.LoadScene(5);
+	}
+
+	public void OpenMap4()
+	{
+		SceneManager.LoadScene(6);
+	}
 }
