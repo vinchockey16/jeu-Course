@@ -5,17 +5,7 @@ using UnityEngine;
 
 
 
-
-
-
-using System.Collections;
-using System.Collections.Generic;
-using System;
-using UnityEngine;
-
-
-
-public class Aetoile : MonoBehaviour
+public class AEtoile : MonoBehaviour
 {
     // [SerializeField] private CharacterPathfindingMovementHandler characterPathfinding;
 
