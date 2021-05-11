@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 
-public class AEtoile : MonoBehaviour
+public class testing : MonoBehaviour
 {
     // [SerializeField] private CharacterPathfindingMovementHandler characterPathfinding;
 
@@ -54,7 +54,8 @@ public class AEtoile : MonoBehaviour
             }
         }*/
 
-        
+        if (transform.position.x < 48 - 34)
+        {
             for (int i = 0; i < chemin.Count - 1; i++)
             {
                 Debug.DrawLine(new Vector3(chemin[i].x - 34, chemin[i].y - 12) * 0.5f + Vector3.one * 0.2f, new Vector3(chemin[i + 1].x - 34, chemin[i + 1].y - 12) * 0.5f + Vector3.one * 0.2f, Color.green, 20f);
@@ -65,7 +66,7 @@ public class AEtoile : MonoBehaviour
             }
             cible = new Vector3((chemin[1].x - chemin[0].x) * 0.5f + positionDeDepartX , (chemin[1].y - chemin[0].y) * 0.5f + positionDeDepartY);
             Debug.Log(cible);
-        
+        }
     }
 
     private void Update()
