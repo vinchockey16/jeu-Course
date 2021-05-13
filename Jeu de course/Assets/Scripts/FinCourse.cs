@@ -14,6 +14,11 @@ public class FinCourse : MonoBehaviour
 			affichageGagnantUI.gameObject.SetActive(true);
 			Time.timeScale = 0;
 		}
+		if (collision.tag == "A*")
+		{
+			affichageGagnantUI.gameObject.SetActive(true);
+			Time.timeScale = 0;
+		}
 	}		
 
 	public void OpenMenuFromGagnant(){

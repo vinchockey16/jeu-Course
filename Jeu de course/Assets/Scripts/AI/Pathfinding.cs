@@ -13,10 +13,10 @@ public class Pathfinding
     private List<PathNodes> listOuverte;
     private List<PathNodes> listFerme;
 
-    public Pathfinding(int width, int height)
+    public Pathfinding(int width, int height, Vector3 vecteur)
     {
    
-        grid = new Grid<PathNodes>(width, height, 30f, new Vector3(220, 35, 0), (Grid<PathNodes> g, int x, int y) => new PathNodes(g, x , y));
+        grid = new Grid<PathNodes>(width, height, 30f, vecteur, (Grid<PathNodes> g, int x, int y) => new PathNodes(g, x , y));
     }
 
     public Grid<PathNodes> GetGrid()
@@ -24,7 +24,7 @@ public class Pathfinding
         return grid;
     }
 
-    public List<PathNodes> FindPath(int startX, int startY, int endX, int endY, int map)
+    public List<PathNodes> FindPath(int startX, int startY, int endX, int endY, int map, int aleatoire)
     {
         PathNodes nodeDebut = grid.GetGridObject(startX, startY);
         PathNodes nodeFin = grid.GetGridObject(endX, endY);
@@ -79,9 +79,9 @@ public class Pathfinding
                 listFerme.Add(grid.GetGridObject(x, 16));
             }
 
-            for (int y = 8; y <= 28; y++)
+            for (int y = 21; y <= 27; y++)
             {
-                listFerme.Add(grid.GetGridObject(4, y));
+                listFerme.Add(grid.GetGridObject(5, y));
             }
             for (int y = 8; y <= 20; y++)
             {
@@ -256,10 +256,34 @@ public class Pathfinding
 
             listFerme.Add(grid.GetGridObject(34, 14));
 
+            for (int y = 0; y <= 3; y++)
+            {
+                listFerme.Add(grid.GetGridObject(5, y));
+            }
+
+            if (aleatoire == 1)
+            {
+                for (int x = 6; x <= 8; x++)
+                {
+                    listFerme.Add(grid.GetGridObject(x, 8));
+                }
+            }else if(aleatoire == 2)
+            {
+                for (int x = 20; x <= 22; x++)
+                {
+                    listFerme.Add(grid.GetGridObject(x, 25));
+                }
+                listFerme.Add(grid.GetGridObject(18, 26));
+                listFerme.Add(grid.GetGridObject(19, 26));
+            }
+
         }
         if (map == 2)
         {
-
+            for (int y = 0; y <= 8; y++)
+            {
+                listFerme.Add(grid.GetGridObject(56, y));
+            }
         }
 
         if(map == 3)

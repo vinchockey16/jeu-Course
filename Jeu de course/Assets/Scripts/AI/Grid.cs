@@ -39,7 +39,7 @@ public class Grid<TGridObject>
             }
            Debug.DrawLine(GetWorldPosition(0, height), GetWorldPosition(width, height), Color.white, 100f);
             Debug.DrawLine(GetWorldPosition(width, 0), GetWorldPosition(width, height), Color.white, 100f);
-        */
+       */
     }
 
     public int GetWidth()
