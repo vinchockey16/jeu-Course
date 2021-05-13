@@ -280,9 +280,29 @@ public class Pathfinding
         }
         if (map == 2)
         {
-            for (int y = 0; y <= 8; y++)
+            for (int y = 0; y <= 13; y++)
             {
                 listFerme.Add(grid.GetGridObject(56, y));
+            }
+
+            listFerme.Add(grid.GetGridObject(55, 13));
+            listFerme.Add(grid.GetGridObject(55, 14));
+            listFerme.Add(grid.GetGridObject(54, 14));
+            listFerme.Add(grid.GetGridObject(54, 15));
+            listFerme.Add(grid.GetGridObject(53, 15));
+
+            for (int x = 51; x <= 58; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 16));
+            }
+
+            listFerme.Add(grid.GetGridObject(58, 17));
+            listFerme.Add(grid.GetGridObject(59, 17));
+            listFerme.Add(grid.GetGridObject(59, 18));
+
+            for (int y = 18; y <= 24; y++)
+            {
+                listFerme.Add(grid.GetGridObject(60, y));
             }
         }
 
