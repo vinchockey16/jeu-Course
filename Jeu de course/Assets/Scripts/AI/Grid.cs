@@ -28,7 +28,7 @@ public class Grid<TGridObject>
                 gridArray[x, y] = createGridObject(this, x, y);
             }
         }
-        /*Pour afficher la grille
+        /*Pour afficher la grille*/
             for (int x = 0; x < gridArray.GetLength(0); x++)
             {
                 for (int y = 0; y < gridArray.GetLength(1); y++)
@@ -39,7 +39,7 @@ public class Grid<TGridObject>
             }
            Debug.DrawLine(GetWorldPosition(0, height), GetWorldPosition(width, height), Color.white, 100f);
             Debug.DrawLine(GetWorldPosition(width, 0), GetWorldPosition(width, height), Color.white, 100f);
-       */
+       
     }
 
     public int GetWidth()
