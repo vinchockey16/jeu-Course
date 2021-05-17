@@ -1947,9 +1947,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   driftFactor: 0.95
-  accelerationFactor: 100
+  accelerationFactor: 45
   turnFactor: 2
-  maxSpeed: 60
+  maxSpeed: 120
 --- !u!114 &336323461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4202,7 +4202,7 @@ SpriteRenderer:
   m_SortingLayerID: -57490607
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: eda0d9ebde236b44694ef2be9c31cc2f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f0e5ce298f124e24fad24e329b43b633, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4225,7 +4225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34b1960af73d82b45899dd7ace64622c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitesse: 240
+  vitesse: 0
   positionDeDepartX: -612
   positionDeDepartY: -492
   rb: {fileID: 777431276}
@@ -6616,7 +6616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2269a39f9208b540b73d1314ae5c340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitesse: 240
+  vitesse: 0
   positionDeDepartX: -556.6
   positionDeDepartY: -493.0287
   rb: {fileID: 1189445592}

@@ -5585,7 +5585,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1052743909}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 652.5, y: -484, z: 0}
+  m_LocalPosition: {x: 650, y: -483, z: 0}
   m_LocalScale: {x: 62, y: 62, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5624,8 +5624,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2269a39f9208b540b73d1314ae5c340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitesse: 240
-  positionDeDepartX: 652.5
+  vitesse: 0
+  positionDeDepartX: 650
   positionDeDepartY: -484
   rb: {fileID: 1052743912}
   map: 2
@@ -10388,7 +10388,7 @@ SpriteRenderer:
   m_SortingLayerID: -57490607
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: eda0d9ebde236b44694ef2be9c31cc2f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f0e5ce298f124e24fad24e329b43b633, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10446,7 +10446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34b1960af73d82b45899dd7ace64622c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitesse: 240
+  vitesse: 0
   positionDeDepartX: 708.6
   positionDeDepartY: -484.1
   rb: {fileID: 2112363189}
