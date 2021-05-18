@@ -98,6 +98,9 @@ public class Pathfinding
             {
                 listFerme.Add(grid.GetGridObject(12, y));
             }
+
+            listFerme.Add(grid.GetGridObject(12, 20));
+
             listFerme.Add(grid.GetGridObject(13, 28));
             listFerme.Add(grid.GetGridObject(13, 29));
             listFerme.Add(grid.GetGridObject(14, 29));
@@ -171,6 +174,13 @@ public class Pathfinding
                 listFerme.Add(grid.GetGridObject(23, y));
             }
 
+            for (int y = 8; y <= 28; y++)
+            {
+                listFerme.Add(grid.GetGridObject(4, y));
+            }
+
+            listFerme.Add(grid.GetGridObject(20, 25));
+
             listFerme.Add(grid.GetGridObject(24, 14));
             listFerme.Add(grid.GetGridObject(24, 13));
             listFerme.Add(grid.GetGridObject(25, 11));
@@ -199,6 +209,8 @@ public class Pathfinding
             listFerme.Add(grid.GetGridObject(39, 25));
             listFerme.Add(grid.GetGridObject(38, 24));
             listFerme.Add(grid.GetGridObject(37, 24));
+
+            listFerme.Add(grid.GetGridObject(40, 25));
 
             for (int x = 26; x <= 37; x++)
             {
