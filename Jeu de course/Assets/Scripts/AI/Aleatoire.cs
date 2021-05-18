@@ -20,8 +20,8 @@ public class Aleatoire : MonoBehaviour
     private List<PathNodes> chemin;
     private int tourner = 0;
     private  int j = 1;
-    private int decalageX;
-    private int decalageY;
+    private float decalageX;
+    private float decalageY;
 
 
 
@@ -34,7 +34,7 @@ public class Aleatoire : MonoBehaviour
         if (map == 1)
         {
             System.Random random = new System.Random();
-            entier = random.Next(0, 3);
+            entier = random.Next(0, 2);
 
             if (entier == 1 || entier == 2)
             {
@@ -48,22 +48,33 @@ public class Aleatoire : MonoBehaviour
             decalageX = 25;
             decalageY = 17;
         }
-        if (map == 2)
+        else if (map == 2)
+        {
+            System.Random random = new System.Random();
+            entier = random.Next(0, 2);
+
+            pathfinding = new Pathfinding(62, 35, new Vector3(-950, -503, 0));
+            chemin = pathfinding.FindPath(55, 0, 0, 27, map, entier);
+
+            decalageX = 32;
+            decalageY = 17;
+        }
+        else if (map == 3)
         {
             System.Random random = new System.Random();
             entier = random.Next(0, 3);
 
-            if (entier == 1 || entier == 2)
+            if (entier == 2 || entier == 3)
             {
-                finY = 27;
+                finY = 29;
             }
             else { finY = 27; }
 
-            pathfinding = new Pathfinding(62, 35, new Vector3(-950, -503, 0));
-            chemin = pathfinding.FindPath(55, 0, 0, finY, map, entier);
+            pathfinding = new Pathfinding(72, 37, new Vector3(-1065, -580, 0));
+            chemin = pathfinding.FindPath(4, 0, 0, finY, map, entier);
 
-            decalageX = 32;
-            decalageY = 17;
+            decalageX = 35.7f;
+            decalageY = 19.5f;
         }
 
 
