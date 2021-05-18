@@ -49,6 +49,13 @@ public class Aetoile : MonoBehaviour
             decalageX = 35.7f;
             decalageY = 19.5f;
         }
+        else if (map == 4)
+        {
+            pathfinding = new Pathfinding(65, 37, new Vector3(-1020, -545, 0));
+            chemin = pathfinding.FindPath(35, 17, 26, 4, map, 0);
+            decalageX = 34.2f;
+            decalageY = 18.5f;
+        }
 
 
 

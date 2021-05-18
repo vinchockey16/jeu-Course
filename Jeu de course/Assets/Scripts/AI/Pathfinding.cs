@@ -967,7 +967,427 @@ public class Pathfinding
 
         if(map == 4)
         {
+            for (int y = 16; y <= 24; y++)
+            {
+                listFerme.Add(grid.GetGridObject(31, y));
+            }
 
+            for (int y = 16; y <= 24; y++)
+            {
+                listFerme.Add(grid.GetGridObject(36, y));
+            }
+
+            for (int x = 24; x <= 30; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 24));
+            }
+
+            for (int x = 37; x <= 43; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 24));
+            }
+
+            for (int y = 15; y <= 23; y++)
+            {
+                listFerme.Add(grid.GetGridObject(24, y));
+            }
+
+            for (int y = 15; y <= 23; y++)
+            {
+                listFerme.Add(grid.GetGridObject(43, y));
+            }
+
+            for (int x = 25; x <= 42; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 15));
+            }
+
+            for (int x = 22; x <= 45; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 29));
+            }
+
+            listFerme.Add(grid.GetGridObject(45, 28));
+            listFerme.Add(grid.GetGridObject(46, 28));
+            listFerme.Add(grid.GetGridObject(46, 27));
+
+            listFerme.Add(grid.GetGridObject(22, 28));
+            listFerme.Add(grid.GetGridObject(21, 28));
+            listFerme.Add(grid.GetGridObject(21, 27));
+
+            listFerme.Add(grid.GetGridObject(32, 24));
+
+            for (int x = 24; x <= 31; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 25));
+            }
+
+            for (int x = 36; x <= 43; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 25));
+            }
+
+            for (int y = 13; y <= 27; y++)
+            {
+                listFerme.Add(grid.GetGridObject(20, y));
+            }
+
+            for (int y = 13; y <= 27; y++)
+            {
+                listFerme.Add(grid.GetGridObject(47, y));
+            }
+
+            listFerme.Add(grid.GetGridObject(45, 12));
+            listFerme.Add(grid.GetGridObject(46, 12));
+            listFerme.Add(grid.GetGridObject(46, 13));
+
+            listFerme.Add(grid.GetGridObject(22, 12));
+            listFerme.Add(grid.GetGridObject(21, 12));
+            listFerme.Add(grid.GetGridObject(21, 13));
+
+            for (int x = 22; x <= 31; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 11));
+            }
+
+            for (int x = 36; x <= 45; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 11));
+            }
+
+            for (int y = 8; y <= 10; y++)
+            {
+                listFerme.Add(grid.GetGridObject(36, y));
+            }
+
+            listFerme.Add(grid.GetGridObject(31, 10));
+            listFerme.Add(grid.GetGridObject(31, 9));
+
+            listFerme.Add(grid.GetGridObject(35, 8));
+            listFerme.Add(grid.GetGridObject(35, 7));
+
+            for (int y = 7; y <= 9; y++)
+            {
+                listFerme.Add(grid.GetGridObject(30, y));
+            }
+
+            for (int y = 5; y <= 7; y++)
+            {
+                listFerme.Add(grid.GetGridObject(34, y));
+            }
+
+            for (int y = 3; y <= 7; y++)
+            {
+                listFerme.Add(grid.GetGridObject(29, y));
+            }
+            for (int y = 1; y <= 3; y++)
+            {
+                listFerme.Add(grid.GetGridObject(30, y));
+            }
+
+            listFerme.Add(grid.GetGridObject(31, 1));
+            listFerme.Add(grid.GetGridObject(32, 1));
+
+            for (int x = 32; x <= 57; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 0));
+            }
+
+            for (int x = 35; x <= 55; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 5));
+            }
+
+            listFerme.Add(grid.GetGridObject(57, 1));
+            listFerme.Add(grid.GetGridObject(58, 1));
+            listFerme.Add(grid.GetGridObject(58, 2));
+
+            for (int y = 2; y <= 5; y++)
+            {
+                listFerme.Add(grid.GetGridObject(59, y));
+            }
+
+            for (int y = 6; y <= 8; y++)
+            {
+                listFerme.Add(grid.GetGridObject(55, y));
+            }
+
+            listFerme.Add(grid.GetGridObject(56, 8));
+            listFerme.Add(grid.GetGridObject(56, 9));
+            listFerme.Add(grid.GetGridObject(57, 9));
+
+            for (int x = 60; x <= 62; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 5));
+            }
+
+            for (int x = 57; x <= 60; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 10));
+            }
+
+            listFerme.Add(grid.GetGridObject(62, 6));
+            listFerme.Add(grid.GetGridObject(63, 6));
+            listFerme.Add(grid.GetGridObject(63, 7));
+
+            for (int y = 11; y <= 27; y++)
+            {
+                listFerme.Add(grid.GetGridObject(60, y));
+            }
+
+            for (int y = 7; y <= 30; y++)
+            {
+                listFerme.Add(grid.GetGridObject(64, y));
+            }
+
+            for (int x = 56; x <= 59; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 27));
+            }
+
+            listFerme.Add(grid.GetGridObject(56, 28));
+            listFerme.Add(grid.GetGridObject(55, 28));
+
+            for (int x = 50; x <= 55; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 29));
+            }
+
+            listFerme.Add(grid.GetGridObject(50, 30));
+            listFerme.Add(grid.GetGridObject(49, 30));
+
+            listFerme.Add(grid.GetGridObject(63, 30));
+
+            listFerme.Add(grid.GetGridObject(57, 28));
+            listFerme.Add(grid.GetGridObject(51, 30));
+
+            for (int x = 59; x <= 63; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 31));
+            }
+
+            for (int x = 57; x <= 59; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 32));
+            }
+            for (int x = 55; x <= 57; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 33));
+            }
+            for (int x = 51; x <= 55; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 34));
+            }
+            for (int x = 49; x <= 51; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 35));
+            }
+
+            for (int x = 2; x <= 49; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 36));
+            }
+
+            for (int x = 18; x <= 49; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 31));
+            }
+
+            for (int x = 5; x <= 13; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 31));
+            }
+
+            listFerme.Add(grid.GetGridObject(2, 35));
+
+            for (int y = 33; y <= 35; y++)
+            {
+                listFerme.Add(grid.GetGridObject(1, y));
+            }
+
+            for (int y = 4; y <= 33; y++)
+            {
+                listFerme.Add(grid.GetGridObject(0, y));
+            }
+
+            for (int y = 6; y <= 30; y++)
+            {
+                listFerme.Add(grid.GetGridObject(5, y));
+            }
+
+            for (int x = 9; x <= 11; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 30));
+            }
+
+            listFerme.Add(grid.GetGridObject(9, 29));
+            listFerme.Add(grid.GetGridObject(9, 28));
+
+            for (int y = 24; y <= 28; y++)
+            {
+                listFerme.Add(grid.GetGridObject(8, y));
+            }
+
+            listFerme.Add(grid.GetGridObject(17, 31));
+            listFerme.Add(grid.GetGridObject(4, 31));
+
+            listFerme.Add(grid.GetGridObject(18, 30));
+            listFerme.Add(grid.GetGridObject(18, 29));
+            listFerme.Add(grid.GetGridObject(17, 29));
+            listFerme.Add(grid.GetGridObject(17, 28));
+            listFerme.Add(grid.GetGridObject(16, 28));
+            listFerme.Add(grid.GetGridObject(16, 27));
+            listFerme.Add(grid.GetGridObject(15, 27));
+
+            for (int x = 13; x <= 15; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 26));
+            }
+
+            listFerme.Add(grid.GetGridObject(15, 25));
+            listFerme.Add(grid.GetGridObject(16, 25));
+            listFerme.Add(grid.GetGridObject(16, 24));
+            listFerme.Add(grid.GetGridObject(17, 24));
+            listFerme.Add(grid.GetGridObject(17, 23));
+
+            listFerme.Add(grid.GetGridObject(13, 27));
+            listFerme.Add(grid.GetGridObject(13, 17));
+
+            for (int y = 19; y <= 23; y++)
+            {
+                listFerme.Add(grid.GetGridObject(18, y));
+            }
+
+            for (int y = 22; y <= 24; y++)
+            {
+                listFerme.Add(grid.GetGridObject(9, y));
+            }
+
+            listFerme.Add(grid.GetGridObject(10, 22));
+            listFerme.Add(grid.GetGridObject(11, 22));
+
+            for (int x = 11; x <= 13; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 21));
+            }
+
+            for (int x = 9; x <= 11; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 20));
+            }
+
+            listFerme.Add(grid.GetGridObject(9, 19));
+            listFerme.Add(grid.GetGridObject(9, 18));
+
+            for (int y = 14; y <= 18; y++)
+            {
+                listFerme.Add(grid.GetGridObject(8, y));
+            }
+
+            listFerme.Add(grid.GetGridObject(9, 14));
+            listFerme.Add(grid.GetGridObject(9, 13));
+            listFerme.Add(grid.GetGridObject(8, 13));
+            listFerme.Add(grid.GetGridObject(8, 12));
+            listFerme.Add(grid.GetGridObject(7, 12));
+
+            for (int x = 11; x <= 13; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 11));
+            }
+
+            listFerme.Add(grid.GetGridObject(13, 10));
+            listFerme.Add(grid.GetGridObject(13, 9));
+            listFerme.Add(grid.GetGridObject(12, 9));
+            listFerme.Add(grid.GetGridObject(12, 8));
+
+            for (int y = 5; y <= 8; y++)
+            {
+                listFerme.Add(grid.GetGridObject(11, y));
+            }
+
+            listFerme.Add(grid.GetGridObject(17, 19));
+            listFerme.Add(grid.GetGridObject(17, 18));
+            listFerme.Add(grid.GetGridObject(16, 18));
+            listFerme.Add(grid.GetGridObject(16, 17));
+            listFerme.Add(grid.GetGridObject(15, 17));
+
+            for (int x = 13; x <= 15; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 16));
+            }
+
+            for (int x = 15; x <= 17; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 15));
+            }
+
+            listFerme.Add(grid.GetGridObject(17, 14));
+            listFerme.Add(grid.GetGridObject(17, 13));
+
+            for (int y = 9; y <= 13; y++)
+            {
+                listFerme.Add(grid.GetGridObject(18, y));
+            }
+
+            for (int y = 6; y <= 9; y++)
+            {
+                listFerme.Add(grid.GetGridObject(17, y));
+            }
+
+            for (int y = 5; y <= 7; y++)
+            {
+                listFerme.Add(grid.GetGridObject(16, y));
+            }
+
+            for (int x = 6; x <= 10; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 6));
+            }
+
+            for (int x = 18; x <= 28; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 6));
+            }
+
+            listFerme.Add(grid.GetGridObject(1, 4));
+            listFerme.Add(grid.GetGridObject(1, 3));
+            listFerme.Add(grid.GetGridObject(2, 3));
+
+            for (int x = 2; x <= 28; x++)
+            {
+                listFerme.Add(grid.GetGridObject(x, 2));
+            }
+
+            for (int y = 3; y <= 5; y++)
+            {
+                listFerme.Add(grid.GetGridObject(28, y));
+            }
+
+            if(aleatoire == 1)
+            {
+                for (int y = 26; y <= 28; y++)
+                {
+                    listFerme.Add(grid.GetGridObject(31, y));
+                }
+            }
+            else if (aleatoire == 2)
+            {
+                for (int y = 26; y <= 28; y++)
+                {
+                    listFerme.Add(grid.GetGridObject(31, y));
+                }
+                for (int x = 14; x <= 16; x++)
+                {
+                    listFerme.Add(grid.GetGridObject(x, 31));
+                }
+            }
+            else if(aleatoire == 3)
+            {
+                for (int x = 14; x <= 16; x++)
+                {
+                    listFerme.Add(grid.GetGridObject(x, 31));
+                }
+            }
         }
    
 

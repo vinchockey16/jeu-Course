@@ -76,6 +76,18 @@ public class Aleatoire : MonoBehaviour
             decalageX = 35.7f;
             decalageY = 19.5f;
         }
+        else if (map == 4)
+        {
+            System.Random random = new System.Random();
+            entier = random.Next(0, 3);
+            finY = 4;
+
+            pathfinding = new Pathfinding(65, 37, new Vector3(-1020, -545, 0));
+            chemin = pathfinding.FindPath(33, 17, 26, finY, map, entier);
+
+            decalageX = 34.2f;
+            decalageY = 18.5f;
+        }
 
 
 
