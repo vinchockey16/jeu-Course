@@ -19,8 +19,8 @@ public class Aetoile : MonoBehaviour
     private int tourner = 0;
     private List<PathNodes> chemin;
     private int j = 1;
-    private int decalageX;
-    private int decalageY;
+    private float decalageX;
+    private float decalageY;
     private float infiniPos = float.PositiveInfinity;
     private float infiniNeg = float.NegativeInfinity;
 
@@ -35,16 +35,30 @@ public class Aetoile : MonoBehaviour
             decalageX = 25;
             decalageY = 17;
         }
-        if(map == 2)
+        else if(map == 2)
         {
             pathfinding = new Pathfinding(62, 35, new Vector3(-950, -503, 0));
             chemin = pathfinding.FindPath(53, 0, 0, 27, map, 0);
             decalageX = 32;
             decalageY = 17;
         }
-        
-       
-        
+        else if (map == 3)
+        {
+            pathfinding = new Pathfinding(72, 37, new Vector3(-1065, -580, 0));
+            chemin = pathfinding.FindPath(6, 0, 0, 27, map, 0);
+            decalageX = 35.7f;
+            decalageY = 19.5f;
+        }
+        else if (map == 4)
+        {
+            pathfinding = new Pathfinding(65, 37, new Vector3(-1020, -545, 0));
+            chemin = pathfinding.FindPath(35, 17, 26, 4, map, 0);
+            decalageX = 34.2f;
+            decalageY = 18.5f;
+        }
+
+
+
 
         for (int i = 0; i < chemin.Count - 1; i++)
         {
