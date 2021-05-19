@@ -80,7 +80,7 @@ public class Aleatoire : MonoBehaviour
         {
             System.Random random = new System.Random();
             entier = random.Next(0, 3);
-            finY = 4;
+            finY = 5;
 
             pathfinding = new Pathfinding(65, 37, new Vector3(-1020, -545, 0));
             chemin = pathfinding.FindPath(33, 17, 26, finY, map, entier);
