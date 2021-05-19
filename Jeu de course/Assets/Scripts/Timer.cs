@@ -18,6 +18,6 @@ public class Timer : MonoBehaviour
     void Update()
     {
         timeStart += Time.deltaTime;
-        textBox.text = timeStart.ToString("F2");
+        textBox.text = Time.timeSinceLevelLoad.ToString("F2");
     }
 }
