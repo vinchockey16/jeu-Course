@@ -94,7 +94,7 @@ public class Aleatoire : MonoBehaviour
         for (int i = 0; i < chemin.Count - 1; i++)
         {
             //Pour afficher le chemin
-            Debug.DrawLine(new Vector3(chemin[i].x - decalageX, chemin[i].y - decalageY) * 30f + Vector3.one * 20f, new Vector3(chemin[i + 1].x - decalageX, chemin[i + 1].y - decalageY) * 30f + Vector3.one * 20f, Color.green, 50f);
+            //Debug.DrawLine(new Vector3(chemin[i].x - decalageX, chemin[i].y - decalageY) * 30f + Vector3.one * 20f, new Vector3(chemin[i + 1].x - decalageX, chemin[i + 1].y - decalageY) * 30f + Vector3.one * 20f, Color.green, 50f);
 
         }
         cible = new Vector3((chemin[1].x - chemin[0].x) * 30f + positionDeDepartX, (chemin[1].y - chemin[0].y) * 30f + positionDeDepartY);

@@ -63,7 +63,7 @@ public class Aetoile : MonoBehaviour
         for (int i = 0; i < chemin.Count - 1; i++)
         {
             //Pour afficher le chemin
-             Debug.DrawLine(new Vector3(chemin[i].x - decalageX, chemin[i].y-decalageY) * 30f + Vector3.one * 20f, new Vector3(chemin[i + 1].x -decalageX, chemin[i + 1].y -decalageY) * 30f + Vector3.one * 20f, Color.green, 50f);
+             //Debug.DrawLine(new Vector3(chemin[i].x - decalageX, chemin[i].y-decalageY) * 30f + Vector3.one * 20f, new Vector3(chemin[i + 1].x -decalageX, chemin[i + 1].y -decalageY) * 30f + Vector3.one * 20f, Color.green, 50f);
             //Debug.Log(new Vector3(chemin[i].x, chemin[i].y));
 
 
