@@ -106,7 +106,7 @@ public class Aleatoire : MonoBehaviour
                     Vector3 vecteur2 = transform.up;
 
                     angle = Math.Round((Vector3.AngleBetween(vecteur1, vecteur2)) * (180 / Math.PI), 0);
-                    Debug.Log(angle);
+
                     direction = Convert.ToSingle(angle);
 
                     if (transform.eulerAngles.z < 270 && transform.eulerAngles.z > 90)
