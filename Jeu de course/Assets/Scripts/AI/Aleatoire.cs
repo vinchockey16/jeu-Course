@@ -23,6 +23,9 @@ public class Aleatoire : MonoBehaviour
     private float decalageX;
     private float decalageY;
 
+    private Vector3 immobile;
+    private bool bonneDirection = true;
+
 
 
     private void Start()
@@ -108,17 +111,17 @@ public class Aleatoire : MonoBehaviour
         //{
             if (tourner == 0)
             {
-                double distance = Math.Sqrt(Math.Pow(transform.position.x - cible.x, 2) + Math.Pow(transform.position.y - cible.y, 2));
+                //double distance = Math.Sqrt(Math.Pow(transform.position.x - cible.x, 2) + Math.Pow(transform.position.y - cible.y, 2));
                
 
-                if (distance < 100 )
-                {
+                //if (distance < 100 )
+                //{
                     Vector3 vecteur1 = new Vector3((cible.x - transform.position.x), (cible.y - transform.position.y));
                     //Vector3 vecteur1 = new Vector3(cible.x - (cible.x - ((chemin[j + 1].x - chemin[j].x) * 30f)), cible.y - (cible.y - ((chemin[j + 1].y - chemin[j].y) * 30f)));
                     Vector3 vecteur2 = transform.up;
 
                     angle = Math.Round((Vector3.AngleBetween(vecteur1, vecteur2)) * (180 / Math.PI), 0);
-                   // Debug.Log(angle);
+                    Debug.Log(angle);
                     direction = Convert.ToSingle(angle);
 
                     if (transform.eulerAngles.z < 270 && transform.eulerAngles.z > 90)
@@ -222,10 +225,10 @@ public class Aleatoire : MonoBehaviour
                     }
                     else { tourner = 1;}
 
-                }
+                //}
             }
 
-            if (transform.position.x >= cible.x - 30 && transform.position.y >= cible.y - 30 && transform.position.x <= cible.x + 30 && transform.position.y <= cible.y + 30 /*&& angle < 1f && angle > -1f*/)
+            if (transform.position.x >= cible.x - 30 && transform.position.y >= cible.y - 30 && transform.position.x <= cible.x + 30 && transform.position.y <= cible.y + 30)
             {
              if(vitesse < 400)
             {
@@ -238,18 +241,33 @@ public class Aleatoire : MonoBehaviour
 
                 j++;
                 tourner = 0;
+            bonneDirection = true;
             }
         //}
     }
     private void FixedUpdate()
     {
+
+        
         if (0 < Time.time)
         {
-           // if (transform.position.x <= 783 || transform.position.y <= -52)
-           // {
+            if (bonneDirection == true)
+            {
                 rb.AddForce(transform.up * vitesse);
-           // }
+            }
+
+            if (immobile == transform.position || bonneDirection == false)
+            {
+
+                rb.AddForce(-transform.up * vitesse);
+                tourner = 0;
+                bonneDirection = false;
+            }
+            else { immobile = transform.position; }
         }
+
+        
+
     }
 
 

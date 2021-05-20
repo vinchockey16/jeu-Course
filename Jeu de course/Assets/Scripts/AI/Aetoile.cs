@@ -21,8 +21,9 @@ public class Aetoile : MonoBehaviour
     private int j = 1;
     private float decalageX;
     private float decalageY;
-    private float infiniPos = float.PositiveInfinity;
-    private float infiniNeg = float.NegativeInfinity;
+
+    private Vector3 immobile;
+    private bool bonneDirection = true;
 
 
     private void Start()
@@ -80,10 +81,10 @@ public class Aetoile : MonoBehaviour
         //{
             if (tourner == 0)
             {
-                double distance = Math.Sqrt(Math.Pow(transform.position.x - cible.x, 2) + Math.Pow(transform.position.y - cible.y, 2));
+               // double distance = Math.Sqrt(Math.Pow(transform.position.x - cible.x, 2) + Math.Pow(transform.position.y - cible.y, 2));
 
-                if (distance < 100 )
-                {
+                //if (distance < 100 )
+               // {
                     Vector3 vecteur1 = new Vector3((cible.x - transform.position.x), (cible.y - transform.position.y));
                     //Vector3 vecteur1 = new Vector3(cible.x - (cible.x - ((chemin[j + 1].x - chemin[j].x) * 30f)), cible.y - (cible.y - ((chemin[j + 1].y - chemin[j].y) * 30f)));
                     Vector3 vecteur2 = transform.up;
@@ -193,7 +194,7 @@ public class Aetoile : MonoBehaviour
                         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, 0f, (direction / Math.Abs(direction)) * 150f * Time.deltaTime));
                     }
                     else { tourner = 1; }
-                }
+               // }
             }
 
             if (transform.position.x >= cible.x - 30 && transform.position.y >= cible.y - 30 && transform.position.x <= cible.x + 30 && transform.position.y <= cible.y + 30 /*&& angle < 1f && angle > -1f*/)
@@ -208,6 +209,7 @@ public class Aetoile : MonoBehaviour
                 //Debug.Log("Cible: " + cible);
                 j++;
                 tourner = 0;
+            bonneDirection = true;
 
             }
        // }
@@ -216,10 +218,19 @@ public class Aetoile : MonoBehaviour
     {
         if (0 < Time.time)
         {
-            //if (transform.position.x >= -840 || transform.position.y <= 326)
-            //{
+            if (bonneDirection == true)
+            {
                 rb.AddForce(transform.up * vitesse);
-           // }
+            }
+
+            if (immobile == transform.position || bonneDirection == false)
+            {
+
+                rb.AddForce(-transform.up * 240);
+                tourner = 0;
+                bonneDirection = false;
+            }
+            else { immobile = transform.position; }
         }
     }
 
