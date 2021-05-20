@@ -23,16 +23,10 @@ public class Aleatoire : MonoBehaviour
     private float decalageX;
     private float decalageY;
 
-    private Vector3 immobile;
-    private bool bonneDirection = true;
-
-
 
     private void Start()
     {
         rb.transform.parent = null;
-
-
 
         if (map == 1)
         {
@@ -101,23 +95,14 @@ public class Aleatoire : MonoBehaviour
 
         }
         cible = new Vector3((chemin[1].x - chemin[0].x) * 30f + positionDeDepartX, (chemin[1].y - chemin[0].y) * 30f + positionDeDepartY);
-       // Debug.Log(cible);
 
     }
 
     private void Update()
     {
-       // if (transform.position.x <= 783 || transform.position.y <= -52)
-        //{
             if (tourner == 0)
             {
-                //double distance = Math.Sqrt(Math.Pow(transform.position.x - cible.x, 2) + Math.Pow(transform.position.y - cible.y, 2));
-               
-
-                //if (distance < 100 )
-                //{
                     Vector3 vecteur1 = new Vector3((cible.x - transform.position.x), (cible.y - transform.position.y));
-                    //Vector3 vecteur1 = new Vector3(cible.x - (cible.x - ((chemin[j + 1].x - chemin[j].x) * 30f)), cible.y - (cible.y - ((chemin[j + 1].y - chemin[j].y) * 30f)));
                     Vector3 vecteur2 = transform.up;
 
                     angle = Math.Round((Vector3.AngleBetween(vecteur1, vecteur2)) * (180 / Math.PI), 0);
@@ -132,7 +117,7 @@ public class Aleatoire : MonoBehaviour
                             {
                                 direction = direction * -1;
                             }
-                            else if (/*vecteur1.y / vecteur1.x < vecteur2.y / vecteur2.x*/ vecteur1.y < 0 && vecteur1.x < 0)
+                            else if ( vecteur1.y < 0 && vecteur1.x < 0)
                         {
                             direction = direction * -1;
                         }
@@ -146,9 +131,9 @@ public class Aleatoire : MonoBehaviour
                             }
                             else if (vecteur1.y / vecteur1.x < vecteur2.y / vecteur2.x && vecteur1.y < 0 && vecteur1.x > 0)
                             {
-                            //Debug.Log("allo");
                               direction = direction * 1;
                             }
+
                         else if (vecteur1.y / vecteur1.x < vecteur2.y / vecteur2.x && vecteur1.y < 0 && vecteur1.x < 0)
                         {
                             direction = direction * -1;
@@ -220,12 +205,9 @@ public class Aleatoire : MonoBehaviour
 
                     if (angle != 0f)
                     {
-                        // vitesse = 150f;
                          transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, 0f, (direction / Math.Abs(direction)) * 150f * Time.deltaTime));
                     }
                     else { tourner = 1;}
-
-                //}
             }
 
             if (transform.position.x >= cible.x - 30 && transform.position.y >= cible.y - 30 && transform.position.x <= cible.x + 30 && transform.position.y <= cible.y + 30)
@@ -236,40 +218,17 @@ public class Aleatoire : MonoBehaviour
             }
 
                 cible = new Vector3((chemin[j + 1].x - chemin[j].x) * 30f + cible.x, (chemin[j + 1].y - chemin[j].y) * 30f + cible.y);
-                //Debug.Log("Cible: " + cible);
-                // vitesse = 220f;
 
                 j++;
                 tourner = 0;
-            bonneDirection = true;
             }
-        //}
     }
     private void FixedUpdate()
     {
-
-        
         if (0 < Time.time)
         {
-            if (bonneDirection == true)
-            {
                 rb.AddForce(transform.up * vitesse);
-            }
-
-            if (immobile == transform.position || bonneDirection == false)
-            {
-
-                rb.AddForce(-transform.up * vitesse);
-                tourner = 0;
-                bonneDirection = false;
-            }
-            else { immobile = transform.position; }
         }
-
-        
-
     }
-
-
 }
 

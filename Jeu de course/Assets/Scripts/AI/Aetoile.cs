@@ -22,10 +22,6 @@ public class Aetoile : MonoBehaviour
     private float decalageX;
     private float decalageY;
 
-    private Vector3 immobile;
-    private bool bonneDirection = true;
-
-
     private void Start()
     {
         rb.transform.parent = null;
@@ -58,40 +54,26 @@ public class Aetoile : MonoBehaviour
             decalageY = 18.5f;
         }
 
-
-
-
         for (int i = 0; i < chemin.Count - 1; i++)
         {
             //Pour afficher le chemin
              //Debug.DrawLine(new Vector3(chemin[i].x - decalageX, chemin[i].y-decalageY) * 30f + Vector3.one * 20f, new Vector3(chemin[i + 1].x -decalageX, chemin[i + 1].y -decalageY) * 30f + Vector3.one * 20f, Color.green, 50f);
             //Debug.Log(new Vector3(chemin[i].x, chemin[i].y));
 
-
-
         }
         cible = new Vector3((chemin[1].x - chemin[0].x) * 30f + positionDeDepartX, (chemin[1].y - chemin[0].y) * 30f + positionDeDepartY);
-
 
     }
 
     private void Update()
     {
-        //if (transform.position.x >= -840 || transform.position.y <= 326)
-        //{
             if (tourner == 0)
             {
-               // double distance = Math.Sqrt(Math.Pow(transform.position.x - cible.x, 2) + Math.Pow(transform.position.y - cible.y, 2));
-
-                //if (distance < 100 )
-               // {
                     Vector3 vecteur1 = new Vector3((cible.x - transform.position.x), (cible.y - transform.position.y));
-                    //Vector3 vecteur1 = new Vector3(cible.x - (cible.x - ((chemin[j + 1].x - chemin[j].x) * 30f)), cible.y - (cible.y - ((chemin[j + 1].y - chemin[j].y) * 30f)));
                     Vector3 vecteur2 = transform.up;
 
                     angle = (Vector3.AngleBetween(vecteur1, vecteur2)) * (180 / Math.PI);
-                   // Debug.Log(angle);
-                    //Debug.Log(vecteur1);
+
                     direction = Convert.ToSingle(angle);
 
                     if (transform.eulerAngles.z < 270 && transform.eulerAngles.z > 90)
@@ -102,7 +84,7 @@ public class Aetoile : MonoBehaviour
                             {
                                 direction = direction * -1;
                             }
-                        else if (/*vecteur1.y / vecteur1.x < vecteur2.y / vecteur2.x*/ vecteur1.y < 0 && vecteur1.x < 0)
+                        else if (vecteur1.y < 0 && vecteur1.x < 0)
                         {
                             direction = direction * -1;
                         }
@@ -190,11 +172,9 @@ public class Aetoile : MonoBehaviour
 
                     if (angle != 0f)
                     {
-                       // vitesse = 150f;
                         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, 0f, (direction / Math.Abs(direction)) * 150f * Time.deltaTime));
                     }
                     else { tourner = 1; }
-               // }
             }
 
             if (transform.position.x >= cible.x - 30 && transform.position.y >= cible.y - 30 && transform.position.x <= cible.x + 30 && transform.position.y <= cible.y + 30 /*&& angle < 1f && angle > -1f*/)
@@ -206,34 +186,17 @@ public class Aetoile : MonoBehaviour
             }
 
             cible = new Vector3((chemin[j + 1].x - chemin[j].x) * 30f + cible.x, (chemin[j + 1].y - chemin[j].y) * 30f + cible.y);
-                //Debug.Log("Cible: " + cible);
+
                 j++;
                 tourner = 0;
-            bonneDirection = true;
-
             }
-       // }
     }
     private void FixedUpdate()
     {
         if (0 < Time.time)
         {
-            if (bonneDirection == true)
-            {
                 rb.AddForce(transform.up * vitesse);
-            }
-
-            if (immobile == transform.position || bonneDirection == false)
-            {
-
-                rb.AddForce(-transform.up * 240);
-                tourner = 0;
-                bonneDirection = false;
-            }
-            else { immobile = transform.position; }
         }
     }
-
-
 }
 
