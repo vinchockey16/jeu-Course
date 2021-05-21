@@ -5,17 +5,23 @@ using System;
 
 public class Pathfinding
 {
+    //Coût de chaques mouvements
     private const int COUT_MOUV_DROIT = 10;
     private const int COUT_MOUV_DIAGO = 14;
-
  
     public Grid<PathNodes> grid;
-    private List<PathNodes> listOuverte;
-    private List<PathNodes> listFerme;
+    private List<PathNodes> listOuverte; //Liste de cases que nous pouvons utiliser pour faire le chemin
+    private List<PathNodes> listFerme; //Liste de cases que nous ne pouvons pas utiliser pour faire le chemin (murs, obstacles)
 
     public Pathfinding(int width, int height, Vector3 vecteur)
     {
-   
+        /*Création de la grille
+         * width: largeur de la grille(nombre de case en largeur)
+         * height: hauteur de la grille(nombre de case en hauteur)
+         * 30f: grosseur des cases
+         * vecteur: position dans l'espace de la grille
+         * PathNodes: objet créé pour chaques cases
+        */
         grid = new Grid<PathNodes>(width, height, 30f, vecteur, (Grid<PathNodes> g, int x, int y) => new PathNodes(g, x , y));
     }
 
@@ -24,14 +30,23 @@ public class Pathfinding
         return grid;
     }
 
+    /*Création du chemin
+     * startX: position de départ en x
+     * startY: position de départ en y
+     * endX: position d'arrivé en x
+     * endY: position d'arrivé en y
+     * map: la map dans laquelle nous nous trouvons
+     * aléatoire: pour la voiture qui prend un chemin aléatoire
+     */
     public List<PathNodes> FindPath(int startX, int startY, int endX, int endY, int map, int aleatoire)
     {
-        PathNodes nodeDebut = grid.GetGridObject(startX, startY);
-        PathNodes nodeFin = grid.GetGridObject(endX, endY);
+        PathNodes nodeDebut = grid.GetGridObject(startX, startY); //Case de départ
+        PathNodes nodeFin = grid.GetGridObject(endX, endY); //Case d'arrivé
 
         listOuverte = new List<PathNodes> { nodeDebut };
         listFerme = new List<PathNodes>();
 
+        //Positionnement d'un objet à une case
         for (int x = 0; x < grid.GetWidth(); x++)
         {
             for (int y = 0; y < grid.GetHeight(); y++)
@@ -42,12 +57,15 @@ public class Pathfinding
                 pathNodes.vientDeNode = null;
             }
         }
-
+        //initialisation de la case de départ
         nodeDebut.gCout = 0;
         nodeDebut.hCout = CalculDistanceCout(nodeDebut, nodeFin);
         nodeDebut.CalculateFCout();
+
+        //Création des chemins pour chaque map
         if (map == 1)
         {
+            //On ajoute certaines cases dans la liste fermée pour créer les murs
             for (int y = 0; y <= 4; y++)
             {
                 listFerme.Add(grid.GetGridObject(7, y));
@@ -104,7 +122,7 @@ public class Pathfinding
             listFerme.Add(grid.GetGridObject(13, 28));
             listFerme.Add(grid.GetGridObject(13, 29));
             listFerme.Add(grid.GetGridObject(14, 29));
-            /**/listFerme.Add(grid.GetGridObject(9, 16));
+            listFerme.Add(grid.GetGridObject(9, 16));
 
             listFerme.Add(grid.GetGridObject(5, 28));
             listFerme.Add(grid.GetGridObject(5, 29));
@@ -275,7 +293,7 @@ public class Pathfinding
             {
                 listFerme.Add(grid.GetGridObject(5, y));
             }
-
+            // on ajoute des murs dans le chemin pour forcer la voiture aléatoire à passer par d'autres chemins
             if (aleatoire == 1)
             {
                 for (int x = 6; x <= 8; x++)
@@ -293,6 +311,10 @@ public class Pathfinding
             }
 
         }
+
+
+
+        //map 2
         if (map == 2)
         {
             for (int y = 0; y <= 13; y++)
@@ -364,7 +386,7 @@ public class Pathfinding
             listFerme.Add(grid.GetGridObject(29, 5));
             listFerme.Add(grid.GetGridObject(29, 4));
             listFerme.Add(grid.GetGridObject(28, 4));
-          /**/  listFerme.Add(grid.GetGridObject(35, 12));
+            listFerme.Add(grid.GetGridObject(35, 12));
 
             for (int x = 26; x <= 28; x++)
             {
@@ -410,7 +432,7 @@ public class Pathfinding
                 listFerme.Add(grid.GetGridObject(25, y));
             }
 
-           /**/ listFerme.Add(grid.GetGridObject(26, 7));
+            listFerme.Add(grid.GetGridObject(26, 7));
             listFerme.Add(grid.GetGridObject(26, 10));
             listFerme.Add(grid.GetGridObject(26, 11));
             listFerme.Add(grid.GetGridObject(27, 11));
@@ -426,8 +448,8 @@ public class Pathfinding
             listFerme.Add(grid.GetGridObject(29, 25));
             listFerme.Add(grid.GetGridObject(29, 26));
             listFerme.Add(grid.GetGridObject(30, 26));
-            /**/listFerme.Add(grid.GetGridObject(41, 27));
-            /**/listFerme.Add(grid.GetGridObject(41, 28));
+            listFerme.Add(grid.GetGridObject(41, 27));
+            listFerme.Add(grid.GetGridObject(41, 28));
 
             for (int x = 30; x <= 40; x++)
             {
@@ -466,7 +488,7 @@ public class Pathfinding
             {
                 listFerme.Add(grid.GetGridObject(x, 20));
             }
-           /**/ listFerme.Add(grid.GetGridObject(56, 20));
+            listFerme.Add(grid.GetGridObject(56, 20));
 
             for (int y = 21; y <= 29; y++)
             {
@@ -600,7 +622,7 @@ public class Pathfinding
             }
         }
 
-
+        //map 3
         if(map == 3)
         {
             for (int y = 0; y <= 8; y++)
@@ -999,6 +1021,7 @@ public class Pathfinding
             }
         }
 
+        //map 4
         if(map == 4)
         {
             for (int y = 16; y <= 24; y++)
@@ -1434,11 +1457,12 @@ public class Pathfinding
             }
         }
    
-
+        //On parcourt la list des cases disponibles
         while (listOuverte.Count > 0)
         {
            
             PathNodes nodeActuel = GetPlusBasCoutFNode(listOuverte);
+            //on arrète quand on est sur la case fin
             if (nodeActuel == nodeFin)
             {
                 return CalculePath(nodeFin);
@@ -1447,22 +1471,20 @@ public class Pathfinding
             listOuverte.Remove(nodeActuel);
             listFerme.Add(nodeActuel);
             
-            
+            //Compare le coût des différents déplacements
             foreach(PathNodes nodeVoisine in GetListVoisine(nodeActuel))
             {
-
-                if (listFerme.Contains(nodeVoisine)) continue;
-                /*if (!neightbourNode.marchable)
+                if (listFerme.Contains(nodeVoisine))
                 {
-                    closedList.Add(neightbourNode);
                     continue;
-                }*/
+                }
 
                 int tentativeGCout = nodeActuel.gCout + CalculDistanceCout(nodeActuel, nodeVoisine);
                 if(tentativeGCout < nodeVoisine.gCout)
                 {
                     nodeVoisine.vientDeNode = nodeActuel;
                     nodeVoisine.gCout = tentativeGCout;
+
                     nodeVoisine.hCout = CalculDistanceCout(nodeVoisine, nodeFin);
                     nodeVoisine.CalculateFCout();
 
@@ -1477,40 +1499,58 @@ public class Pathfinding
         return null;
       
     }
-
+    //retourne la list de la case voisine
     private List<PathNodes> GetListVoisine(PathNodes nodeActuel)
     {
         List<PathNodes> listVoisine = new List<PathNodes>();
-     
-        if(nodeActuel.x - 1 >= 0)
+
+        if (nodeActuel.x - 1 >= 0)
         {
             listVoisine.Add(GetNode(nodeActuel.x - 1, nodeActuel.y));
 
-            if (nodeActuel.y - 1 >= 0) listVoisine.Add(GetNode(nodeActuel.x - 1, nodeActuel.y - 1));
+            if (nodeActuel.y - 1 >= 0)
+            {
+                listVoisine.Add(GetNode(nodeActuel.x - 1, nodeActuel.y - 1));
+            }
 
-            if (nodeActuel.y + 1 < grid.GetHeight()) listVoisine.Add(GetNode(nodeActuel.x - 1, nodeActuel.y + 1));
+            if (nodeActuel.y + 1 < grid.GetHeight())
+            {
+                listVoisine.Add(GetNode(nodeActuel.x - 1, nodeActuel.y + 1));
+            }
+
         }
         if (nodeActuel.x + 1 < grid.GetWidth())
         {
             listVoisine.Add(GetNode(nodeActuel.x + 1, nodeActuel.y));
 
-            if (nodeActuel.y - 1 >= 0) listVoisine.Add(GetNode(nodeActuel.x + 1, nodeActuel.y - 1));
-
-            if (nodeActuel.y + 1 < grid.GetHeight()) listVoisine.Add(GetNode(nodeActuel.x + 1, nodeActuel.y + 1));
+            if (nodeActuel.y - 1 >= 0)
+            {
+                listVoisine.Add(GetNode(nodeActuel.x + 1, nodeActuel.y - 1));
+            }
+            if (nodeActuel.y + 1 < grid.GetHeight())
+            {
+                listVoisine.Add(GetNode(nodeActuel.x + 1, nodeActuel.y + 1));
+            }
         }
 
-        if (nodeActuel.y - 1 >= 0) listVoisine.Add(GetNode(nodeActuel.x, nodeActuel.y - 1));
-        if (nodeActuel.y + 1 < grid.GetHeight()) listVoisine.Add(GetNode(nodeActuel.x, nodeActuel.y + 1));
-     
-        
+        if (nodeActuel.y - 1 >= 0)
+        {
+            listVoisine.Add(GetNode(nodeActuel.x, nodeActuel.y - 1));
+        }
+        if (nodeActuel.y + 1 < grid.GetHeight())
+        {
+            listVoisine.Add(GetNode(nodeActuel.x, nodeActuel.y + 1));
+        }
+
         return listVoisine;
 
     }
-
+    //retourne l'objet de la case
     private PathNodes GetNode(int x, int y) { 
         return grid.GetGridObject(x, y);
     }
 
+    //retoune le chemin le plus court
     private List<PathNodes> CalculePath(PathNodes nodeFin)
     {
         List<PathNodes> chemin = new List<PathNodes>();
@@ -1526,7 +1566,7 @@ public class Pathfinding
         return chemin;
 
     }
-
+    //retourne le coût de déplacement entre deux cases
     private int CalculDistanceCout(PathNodes a, PathNodes b)
     {
         int xDistance = Mathf.Abs(a.x - b.x);
@@ -1535,6 +1575,7 @@ public class Pathfinding
         return COUT_MOUV_DIAGO * Mathf.Min(xDistance, yDistance) + COUT_MOUV_DROIT * restant;
     }
 
+    //retourne le coût le plus bas de F
     private PathNodes GetPlusBasCoutFNode(List<PathNodes> listPathNode)
     {
         PathNodes plusbasCoutF = listPathNode[0];

@@ -12,6 +12,7 @@ public class Grid<TGridObject>
     private Vector3 originPosition;
     private TGridObject[,] gridArray;
 
+    //Création de la grille
     public Grid(int width, int height, float cellSize, Vector3 originPosition, Func<Grid<TGridObject>, int, int, TGridObject> createGridObject)
     {
         this.width = width;
@@ -66,22 +67,6 @@ public class Grid<TGridObject>
         x = Mathf.FloorToInt((worldPosition - originPosition).x / cellSize) ;
         y = Mathf.FloorToInt((worldPosition - originPosition).y / cellSize) ;
     }
-    /*
-    public void SetGridObject(int x, int y, TGridObject value)
-    {
-        if (x >= 0 && y >= 0 && x < width && y < height)
-        {
-            gridArray[x, y] = value;
-            
-        }
-    }* /
-
-  /*  public void SetGridObject(Vector3 worldPosition, TGridObject value)
-    {
-        int x, y;
-        GetXY(worldPosition, out x, out y);
-        SetGridObject(x, y, value);
-    }*/
 
     public TGridObject GetGridObject(int x, int y)
     {
@@ -93,12 +78,4 @@ public class Grid<TGridObject>
             return default(TGridObject);
         }
     }
-    /*
-    public TGridObject GetGridObject(Vector3 worldPosition)
-    {
-        int x, y;
-        GetXY(worldPosition, out x, out y);
-        return GetGridObject(x, y);
-    }
-  */
 }

@@ -14,20 +14,16 @@ public class PathNodes
 
     public PathNodes vientDeNode;
 
+    //création de la case
     public PathNodes(Grid<PathNodes> grid, int x, int y)
     {
         this.grid = grid;
         this.x = x ;
         this.y = y;
     }
-
+    //calcule le coût de F
     public void CalculateFCout()
     {
         fCout = gCout + hCout;
-    }
-
-    public override string ToString()
-    {
-        return x + "," + y;
     }
 }
