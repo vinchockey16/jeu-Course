@@ -2,26 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class FinCourse : MonoBehaviour
 {
-	public GameObject affichageGagnantUI;
-
+	public GameObject affichageGagnant1UI;
+	public GameObject affichageGagnant2UI;
+	public GameObject affichageGagnant3UI;
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if(collision.tag == "BlueCar")
 		{
-			affichageGagnantUI.gameObject.SetActive(true);
+			affichageGagnant1UI.gameObject.SetActive(true);
 			Time.timeScale = 0;
 		}
 		if (collision.tag == "A*")
 		{
-			affichageGagnantUI.gameObject.SetActive(true);
+			affichageGagnant2UI.gameObject.SetActive(true);
 			Time.timeScale = 0;
 		}
 		if (collision.tag == "Aleatoire")
 		{
-			affichageGagnantUI.gameObject.SetActive(true);
+			affichageGagnant3UI.gameObject.SetActive(true);
 			Time.timeScale = 0;
 		}
 	}		
