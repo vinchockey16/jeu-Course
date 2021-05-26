@@ -1733,7 +1733,7 @@ PrefabInstance:
     - target: {fileID: 7866988803176341516, guid: 40d637121ddd45c498fb1714b0b5929c,
         type: 3}
       propertyPath: m_text
-      value: "Arriver le premier \xE0 la ligne d'arriv\xE9e"
+      value: "Arriver le premier \xE0 la ligne d'arriv\xE9e avec la voiture bleue"
       objectReference: {fileID: 0}
     - target: {fileID: 7866988803176341516, guid: 40d637121ddd45c498fb1714b0b5929c,
         type: 3}
